@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ulang.nts.TTSActivity">
+
+
+    <EditText
+        android:id="@+id/tts_content_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:hint="请输入转写内容"
+        android:text="我要打个电话" />
+
+
+    <Button
+        android:id="@+id/tts_btn"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_margin="50dp"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center"
+        android:text="点击TTS"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

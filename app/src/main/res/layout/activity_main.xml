@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ulang.nts.MainActivity">
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/stt_btn_local"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center"
+        android:text="STT Service local file"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+    <Button
+        android:id="@+id/stt_btn_web_socket"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center"
+        android:text="STT Service web socket"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/tts_btn"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center"
+        android:text="TTS Service"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/nlp_btn"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center"
+        android:text="NLP Service"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

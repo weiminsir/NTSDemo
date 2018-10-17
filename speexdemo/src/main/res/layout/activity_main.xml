@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="tv.panda.testspeex.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:id="@+id/play_btn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:background="@android:color/holo_blue_light"
+            android:text="点击播放"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:layout_margin="50dp"/>
+
+        <Button
+            android:id="@+id/record_btn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:background="@android:color/holo_blue_light"
+            android:text="按住说话"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:layout_margin="50dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

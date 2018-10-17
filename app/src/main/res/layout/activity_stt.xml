@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ulang.nts.STTLocalFileActivity">
+
+
+    <Button
+        android:id="@+id/stt_btn_local"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_margin="50dp"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center"
+        android:text="按住说话"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/stt_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="stt 结果:" />
+
+</LinearLayout>
