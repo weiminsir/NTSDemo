@@ -10,16 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
 import java.io.File;
 import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import cz.msebera.android.httpclient.Header;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -54,23 +49,34 @@ public class TTSActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                play("");
+                new Thread() {
+                    @Override
+                    public void run() {
+                        play();
+                    }
+                }.start();
 
             }
         });
 
     }
 
-    public boolean play(String url) {
+    public void play() {
         OkHttpClient client = NetRequest.getOkHttpClient();
         Request request = new Request.Builder().url(NetRequest.BASE_URL + "api/tts?text=今天是星期三").build();
 
-        try {
-            Response response = client.newCall(request).execute();
-            final byte[] data = response.body().bytes();
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+                if (response.isSuccessful()) {
+                    final byte[] data = response.body().bytes();
+
                     try {
                         Log.d(TAG, "audioTrack start ");
                         AudioTrack audioTrack = new AudioTrack(mOutput, mSamplingRate,
@@ -84,18 +90,14 @@ public class TTSActivity extends AppCompatActivity {
                         audioTrack.stop();
                         audioTrack.release();
                     } catch (IllegalArgumentException e) {
+
                     } catch (IllegalStateException e) {
                     }
                 }
-            }).start();
 
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        return true;
+            }
+        });
     }
 
     public boolean DownloadSmallFile(String url) {
